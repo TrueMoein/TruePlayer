@@ -20,6 +20,8 @@
         "prettier"
     ],
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "import/extensions": 0,
+      "import/no-unresolved": 0
     }
 }
