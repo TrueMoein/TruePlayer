@@ -1,3 +1,5 @@
+import { PlayPromise } from './types/video';
+
 class TruePlayer {
   private video: HTMLVideoElement;
 
@@ -5,14 +7,23 @@ class TruePlayer {
     this.video = document.getElementById(id) as HTMLVideoElement;
   }
 
-  public play(): Promise<unknown> {
+  public play(): PlayPromise {
     return this.video.play();
   }
 
-  public seek(time: number, andPlay = false): Promise<unknown> | void {
+  public seek(time: number, withPlay = false): PlayPromise | undefined {
     this.video.currentTime = time;
-    if (andPlay) return this.play();
+    if (withPlay) return this.play();
     return undefined;
+  }
+
+  public pause(): void {
+    this.video.pause();
+  }
+
+  public stop(): void {
+    this.pause();
+    this.seek(0);
   }
 }
 

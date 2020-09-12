@@ -1,22 +1,25 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useEffect } from "react"
+import TruePlayer from "trueplayer"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const IndexPage = () => {
+  useEffect(() => {
+    const player = new TruePlayer("player")
+    player.seek(10)
+  }, [])
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+  return (
+    <div>
+      <h1>Taddaaaa</h1>
+
+      <video
+        id="player"
+        autoPlay
+        width="400"
+        src="http://localhost:6060/media/e10b9839-90a2-426e-8427-1afc3cec2c7a_SatSep122020.mp4"
+        controls
+      />
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+  )
+}
 
 export default IndexPage
