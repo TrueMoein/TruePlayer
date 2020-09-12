@@ -6,6 +6,6 @@
   "bracketSpacing": true,
   "semi": true,
   "useTabs": false,
-  "parser": "babel",
+  "parser": "typescript",
   "jsxBracketSameLine": false
 }
