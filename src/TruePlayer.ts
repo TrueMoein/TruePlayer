@@ -18,7 +18,7 @@ class TruePlayer {
   }
 
   public pause(): void {
-    this.video.pause();
+    this.video.getVideoPlaybackQuality();
   }
 
   public stop(): void {
