@@ -47,17 +47,31 @@ class TruePlayer {
     this.volume(0);
   }
 
-  public state(): IState {
+  public state(event: string): IState {
     return {
+      eventType: event,
       currentTime: this.video.currentTime,
       volume: this.video.volume,
+      duration: this.video.duration,
+      paused: this.video.paused,
     };
   }
 
-  public subscribe(event: subscribeEvents, listener): void {
-    this.video.addEventListener(event, () => {
-      listener(this.state());
+  public subscribe(
+    events: subscribeEvents[],
+    listener: (event) => void,
+  ): () => void {
+    const listeners = {};
+    events.forEach((event) => {
+      listeners[event] = () => listener(this.state(event));
+      this.video.addEventListener(event, listeners[event]);
     });
+
+    return () => {
+      events.forEach((event) => {
+        this.video.removeEventListener(event, listeners[event]);
+      });
+    };
   }
 }
 

@@ -1,1 +1,12 @@
-export type subscribeEvents = 'timeupdate' | 'volumechange';
+export type subscribeEvents =
+  | 'fullscreenchange'
+  | 'durationchange'
+  | 'volumechange'
+  | 'timeupdate'
+  | 'progress'
+  | 'keypress'
+  | 'waiting'
+  | 'playing'
+  | 'seeking'
+  | 'pause'
+  | 'play';

@@ -20,4 +20,4 @@ muteButton.addEventListener('click', () => {
   player.mute();
 });
 
-player.subscribe('volumechange', console.log);
+player.subscribe(['timeupdate'], console.log);

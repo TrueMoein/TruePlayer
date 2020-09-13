@@ -1,6 +1,6 @@
 {
   "name": "trueplayer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Advanced Media Player For JavaScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,6 @@
     "type": "git",
     "url": "git+https://github.com/TrueMoein/TruePlayer.git"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/@TrueMoein" },
   "keywords": [
     "player",
     "video-player",
@@ -40,6 +39,7 @@
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
   }
 }
