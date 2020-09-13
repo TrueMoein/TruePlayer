@@ -1,6 +1,6 @@
 {
   "name": "trueplayer",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Advanced Media Player For JavaScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,8 +8,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --open",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
     "prepare": "npm run build"
   },
   "repository": {

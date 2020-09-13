@@ -3,7 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
-  entry: './src/playground/app.ts',
+  entry: {
+    playground: './src/playground/app.ts',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'TruePlayer...',
@@ -12,7 +14,4 @@ module.exports = merge(common, {
     }),
   ],
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-  },
 });
