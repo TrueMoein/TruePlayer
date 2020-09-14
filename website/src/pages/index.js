@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react"
-import TruePlayer from "trueplayer"
+import { TruePlayer } from "trueplayer"
 
 const IndexPage = () => {
   const video = useRef({})
   useEffect(() => {
-    video.current = new TruePlayer("player")
+    console.log(TruePlayer)
   }, [])
 
   return (
@@ -21,7 +21,7 @@ const IndexPage = () => {
 
       <hr />
       <div>
-        <button onClick={() => video.current.pause()}>Stop</button>
+        <button onClick={() => video.current.pause()}>Toggle</button>
       </div>
     </div>
   )

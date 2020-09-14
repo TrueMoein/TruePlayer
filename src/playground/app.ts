@@ -1,4 +1,4 @@
-import TruePlayer from '../index';
+import { TruePlayer } from '../index';
 
 const player = new TruePlayer('my-video');
 

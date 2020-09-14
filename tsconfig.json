@@ -4,11 +4,14 @@
     "strictNullChecks": true,
     "target": "ES2015",
     "outDir": "dist",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "ES2020",
+    "moduleResolution": "classic",
     "sourceMap": true,
     "lib": ["es2015", "dom"],
-    "rootDir": "src"
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
