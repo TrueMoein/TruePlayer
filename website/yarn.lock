@@ -12987,10 +12987,10 @@ trough@^1.0.0:
   resolved "https://registry.yarnpkg.com/true-case-path/-/true-case-path-2.2.1.tgz#c5bf04a5bbec3fd118be4084461b3a27c4d796bf"
   integrity sha512-0z3j8R7MCjy10kc/g+qg7Ln3alJTodw9aDuVWZa3uiWqfuBMKeAeP2ocWcxoyM3D73yz3Jt/Pu4qPr4wHSdB/Q==
 
-"trueplayer@0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/trueplayer/-/trueplayer-0.4.1.tgz#e6ca730936ff0ddacbf4a4201e0fc136754e58d3"
-  integrity sha512-2DLzft0o5juCzVhjHMtMe+E+W+k0YhxMEdo5y86RjTfnZl2LpzkONrQbX3B/NiCHTPdpKlWsJ/+rJlGOMEHBzA==
+"trueplayer@0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/trueplayer/-/trueplayer-0.4.2.tgz#9f05fc7bfab2a2df09e8841ba64bdbaba75ed0df"
+  integrity sha512-bkjerMbKhXXKzxqgvl5fW2zrL83Y/Ew/jDFaIn4vm5iARaQVo/qmIe5ULwLIDOxu/wCF+jmaqnKSTutFF9p+Ow==
 
 ts-pnp@^1.1.6:
   version "1.2.0"

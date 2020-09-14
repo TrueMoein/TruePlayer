@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react"
-import { TruePlayer } from "trueplayer"
+import { TruePlayer } from "trueplayer/dist"
 
 const IndexPage = () => {
   const video = useRef({})
   useEffect(() => {
-    console.log(TruePlayer)
+    video.current = new TruePlayer("test")
   }, [])
 
   return (
