@@ -1,4 +1,4 @@
-import { TruePlayer } from '../index';
+import TruePlayer from '../src';
 
 const player = new TruePlayer('my-video');
 
@@ -12,12 +12,10 @@ toggleButton.addEventListener('click', () => {
 
 seekInput.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    player.seek(+seekInput.value, true);
+    player.seek(+seekInput.value).then(console.log);
   }
 });
 
 muteButton.addEventListener('click', () => {
-  player.mute();
+  player.fullScreen();
 });
-
-player.subscribe(['timeupdate'], console.log);

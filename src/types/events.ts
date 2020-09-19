@@ -1,12 +1,17 @@
 export type subscribeEvents =
   | 'fullscreenchange'
+  | 'loadedmetadata'
   | 'durationchange'
   | 'volumechange'
+  | 'loadeddata'
   | 'timeupdate'
+  | 'ratechange'
   | 'progress'
   | 'keypress'
   | 'waiting'
   | 'playing'
   | 'seeking'
+  | 'seeked'
   | 'pause'
+  | 'ended'
   | 'play';

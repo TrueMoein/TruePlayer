@@ -4,13 +4,13 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   entry: {
-    playground: './src/playground/app.ts',
+    playground: './playground/app.ts',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'TruePlayer...',
-      template: './src/playground/index.html',
-      favicon: './src/playground/favicon.png',
+      template: './playground/index.html',
+      favicon: './playground/favicon.png',
     }),
   ],
   devtool: 'inline-source-map',

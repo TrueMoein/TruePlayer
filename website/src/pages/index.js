@@ -1,15 +1,22 @@
-import React, { useEffect, useRef } from "react"
-import { TruePlayer } from "trueplayer/dist"
+import React, { useEffect, useRef, useState } from "react"
+import TruePlayer from "trueplayer"
 
 const IndexPage = () => {
-  const video = useRef({})
+  const player = useRef({})
+  const [playerState, setPlayerState] = useState({})
+
   useEffect(() => {
-    video.current = new TruePlayer("test")
+    player.current = new TruePlayer("player")
+    player.current.subscribe(["timeupdate"], setPlayerState)
   }, [])
+
+  useEffect(() => {
+    console.log(playerState)
+  }, [playerState])
 
   return (
     <div>
-      <h1>Taddaaaa</h1>
+      <h1>{Math.floor(playerState.currentTime)}</h1>
 
       <video
         id="player"
@@ -21,7 +28,7 @@ const IndexPage = () => {
 
       <hr />
       <div>
-        <button onClick={() => video.current.pause()}>Toggle</button>
+        <button onClick={() => player.current.togglePlay()}>Toggle</button>
       </div>
     </div>
   )

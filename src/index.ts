@@ -1,1 +1,1 @@
-export { default as TruePlayer } from './TruePlayer';
+export { default } from './TruePlayer';
