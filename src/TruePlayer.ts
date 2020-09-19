@@ -3,22 +3,22 @@ import { subscribeEvents } from './types/events';
 import { IState } from './Interface/IState';
 
 class TruePlayer {
-  private readonly palyer: HTMLVideoElement;
+  private readonly player: HTMLVideoElement;
 
   constructor(id: string) {
-    this.palyer = document.querySelector(`video#${id}`) as HTMLVideoElement;
-    if (!this.palyer) {
+    this.player = document.querySelector(`video#${id}`) as HTMLVideoElement;
+    if (!this.player) {
       throw new Error(`There is no video element with id: ${id}`);
     }
   }
 
   public play(): PlayPromise {
-    return this.palyer.play();
+    return this.player.play();
   }
 
   public seek(time: number): Promise<string> {
     return new Promise((resolve) => {
-      this.palyer.currentTime = time;
+      this.player.currentTime = time;
       const unsubscribe = this.subscribe(['seeked'], () => {
         unsubscribe();
         resolve(`Video seeked to ${time} successfully.`);
@@ -27,7 +27,7 @@ class TruePlayer {
   }
 
   public pause(): void {
-    this.palyer.pause();
+    this.player.pause();
   }
 
   public stop(): void {
@@ -36,28 +36,28 @@ class TruePlayer {
   }
 
   public togglePlay(): PlayPromise | undefined {
-    if (this.palyer.paused) {
+    if (this.player.paused) {
       return this.play();
     }
     this.pause();
     return undefined;
   }
 
-  public volume(volume: number): void {
-    this.palyer.volume = volume;
+  public setVolume(volume: number): void {
+    this.player.volume = volume;
   }
 
   public mute(): void {
-    this.volume(0);
+    this.player.muted = true;
   }
 
   public state(event: subscribeEvents): IState {
     return {
       eventType: event,
-      currentTime: this.palyer.currentTime,
-      volume: this.palyer.volume,
-      duration: this.palyer.duration,
-      paused: this.palyer.paused,
+      currentTime: this.player.currentTime,
+      volume: this.player.volume,
+      duration: this.player.duration,
+      paused: this.player.paused,
     };
   }
 
@@ -68,18 +68,18 @@ class TruePlayer {
     const listeners: any = {};
     events.forEach((event) => {
       listeners[event] = () => listener(this.state(event));
-      this.palyer.addEventListener(event, listeners[event]);
+      this.player.addEventListener(event, listeners[event]);
     });
 
     return () => {
       events.forEach((event) => {
-        this.palyer.removeEventListener(event, listeners[event]);
+        this.player.removeEventListener(event, listeners[event]);
       });
     };
   }
 
   public fullScreen(): Promise<any> {
-    return this.palyer.requestFullscreen();
+    return this.player.requestFullscreen();
   }
 }
 

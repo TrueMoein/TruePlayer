@@ -1,6 +1,6 @@
 {
   "name": "trueplayer",
-  "version": "0.4.14",
+  "version": "1.0.0",
   "description": "Advanced Media Player For JavaScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
